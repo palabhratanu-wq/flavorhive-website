@@ -1,0 +1,256 @@
+/* ============================================================
+   FlavorHive — Custom Styles
+   Color palette: Navy (#0f2057) · Saffron (#f59e0b) · White
+   ============================================================ */
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #1a307e; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
+
+/* ---------- Selection ---------- */
+::selection { background: #fbbf24; color: #0f2057; }
+
+/* ---------- Navbar Scroll Effect ---------- */
+#navbar.scrolled {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 24px rgba(15, 32, 87, 0.10);
+}
+
+#navbar:not(.scrolled) {
+  background: transparent;
+}
+
+/* When not scrolled, make nav text white for visibility over hero */
+#navbar:not(.scrolled) .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+#navbar:not(.scrolled) .nav-link:hover {
+  color: #fbbf24;
+}
+#navbar:not(.scrolled) .font-display {
+  color: white !important;
+}
+#navbar:not(.scrolled) span.text-saffron-500 {
+  color: #fbbf24 !important;
+}
+#navbar:not(.scrolled) #menu-btn {
+  color: white;
+}
+
+/* ---------- Reveal Animations ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Service Cards ---------- */
+.service-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.service-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(245, 158, 11, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon-wrap {
+  width: 3.25rem;
+  height: 3.25rem;
+  background: rgba(245, 158, 11, 0.15);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fbbf24;
+  margin-bottom: 1.25rem;
+  transition: background 0.3s ease;
+}
+
+.service-card:hover .service-icon-wrap {
+  background: rgba(245, 158, 11, 0.25);
+}
+
+/* ---------- Process Steps ---------- */
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.step-number {
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, #0f2057, #1e3a8a);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #fbbf24;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 8px 24px rgba(15, 32, 87, 0.25);
+  border: 3px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step:hover .step-number {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(245, 158, 11, 0.3);
+  border-color: #fbbf24;
+}
+
+/* ---------- Form Inputs ---------- */
+.form-input {
+  width: 100%;
+  background: white;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: #1e293b;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+}
+
+.form-input::placeholder {
+  color: #94a3b8;
+}
+
+/* ---------- Footer Social ---------- */
+.footer-social {
+  width: 2.25rem;
+  height: 2.25rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.footer-social:hover {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+/* ---------- Dot Grid Decoration ---------- */
+.dot-grid {
+  background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+  background-size: 16px 16px;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- Toast ---------- */
+#toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #0f2057;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(15, 32, 87, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+  z-index: 9999;
+  border-left: 4px solid #f59e0b;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Hero saffron text — dark shadow for readability ---------- */
+.hero-saffron {
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.7),
+    0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+/* ---------- Smooth scrolling ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- Mobile Menu Transition ---------- */
+#mobile-menu {
+  transform-origin: top;
+  animation: none;
+}
+
+/* ---------- Subtle hero text glow ---------- */
+.hero-glow {
+  text-shadow: 0 0 40px rgba(251, 191, 36, 0.3);
+}
+
+/* ---------- Back to top button ---------- */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: #0f2057;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.3s, transform 0.3s, background 0.2s;
+  z-index: 9999;
+  box-shadow: 0 4px 16px rgba(15, 32, 87, 0.3);
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background: #f59e0b;
+}
